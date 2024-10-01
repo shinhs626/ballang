@@ -1,9 +1,22 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+type item ={
+  id:string;
+  imgSrc:string;
+  name:string;
+  brand:{
+    nameEn:string
+  };
+  originalPrice:number;
+  price:number;
+}
+
+
 function HomePage() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<item[]>([]);
 
   useEffect(() => {
     (async () => {
